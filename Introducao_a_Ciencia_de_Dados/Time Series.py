@@ -143,7 +143,7 @@ time_series_annual_sum = time_series.resample("A").sum(min_count=360)
 time_series_annual_sum.index = time_series_annual_sum.index.year
 time_series_annual_sum.index.name = "Year"
 
-fig6 = plt.subplots()
+fig6 = plt.subplots() #Don't need that
 ax3 = time_series_annual_sum.loc[start:end].plot.bar(color="C0")
 ax3.set_ylabel("Total Annual Precipitation (mm)")
 ax3.set_title("Annual Precipitation")
@@ -175,3 +175,19 @@ ax5.legend()
 ax5.set_xlabel("Year")
 ax5.set_ylabel("Precipitation (mm)")
 ax5.set_title("Trends in Precipitations")
+
+################ Gantt Chart ###################
+import plotly.figure_factory as ff
+"""time_series_df = pd.DataFrame({"Precipitação (mm)": time_series.values}, index=False)
+time_series_df["Tempo"] = time_series.index
+time_series_df["Year"] = time_series.index.year
+time_series_df["Month"] = time_series.index.month
+time_series_df["Weekday Name"] = time_series.index.weekday_name"""
+
+### O dataframe deve incluir as colunas "Task", "Start" e "Finish" e outra colunas podem ser incluídas
+#Em Task: Nomes dos meses
+#Criar coluna de precipitação contendo a soma da precipiação do mês do referido ano em start até o ano em finish
+#Passar o dataframe na função create_gantt e assim plotar o diagrama de gantt
+
+#fig = ff.create_gantt(time_series, colors=['#333F44', '#93e4c1'], show_colorbar = True, bar_width = 0.2, showgrid_x = True, showgrid_y = True)
+#fig.show()
