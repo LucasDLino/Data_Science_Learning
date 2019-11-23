@@ -1,0 +1,6 @@
+Cria um data frame
+A partir desse dataframe cria outro com as colunas que serão usadas pra criar o gantt chart
+Faz um loop e ver a diferença de datas para incorporar ao dataframe  que será usado para criar o chart
+retira os NaN
+a partir das lacunas analiso as diferenças de datas para incorporar no dataframe que será utilizado para criar o gantt chart
+usar plotly offline

@@ -3,19 +3,25 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 import matplotlib.dates as mdates
+import plotly.figure_factory as ff
+from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
+import plotly.io as pio
+from pathlib import Path
+
 
 ####################### Importing Data #############################
-#dataset = pd.read_csv('chuvas_C_00937023.csv', skiprows=12, sep = ';', index_col=False).set_index('Data', drop=True)
-dataset = pd.read_csv('Introducao_a_Ciencia_de_Dados/chuvas_C_00937023.csv', skiprows=12, sep = ';', index_col=False).set_index('Data', drop=True)
+path = Path(r"C:\Users\lucas\PycharmProjects\Data_Science_Learning\Introducao_a_Ciencia_de_Dados\Chuvas")
+
+dataset = pd.read_csv(path.joinpath('chuvas_C_00937023.csv'), skiprows=12, sep = ';', index_col=False).set_index('Data', drop=True)
 
 ######## Zipped File - Piranhas ########
-#dataset = pd.read_csv('Introducao_a_Ciencia_de_Dados/chuvas_C_00937023.zip', skiprows=12, sep = ';', index_col=False, compression='zip').set_index('Data', drop=True)
+#dataset = pd.read_csv(path.joinpath('chuvas_C_00937023.zip'), skiprows=12, sep = ';', index_col=False, compression='zip').set_index('Data', drop=True)
 
 ####### Zipped File - Piranhas - PILAR (MANGUABA) ############
-#dataset = pd.read_csv('Introducao_a_Ciencia_de_Dados/chuvas_C_00935014.zip', skiprows=12, sep = ';', index_col=False, compression='zip').set_index('Data', drop=True)
+#dataset = pd.read_csv(path.joinpath('chuvas_C_00935014.zip', skiprows=12, sep = ';', index_col=False, compression='zip').set_index('Data', drop=True)
 
 ####### Zipped File - Fazenda Boa Fortuna ##########
-#dataset = pd.read_csv('Introducao_a_Ciencia_de_Dados/chuvas_C_00935056.zip', skiprows=12, sep = ';', index_col=False, compression='zip').set_index('Data', drop=True)
+#dataset = pd.read_csv(path.joinpath('chuvas_C_00935056.zip', skiprows=12, sep = ';', index_col=False, compression='zip').set_index('Data', drop=True)
 
 
 ################### Manupulating the data ########################
@@ -177,7 +183,6 @@ ax5.set_ylabel("Precipitation (mm)")
 ax5.set_title("Trends in Precipitations")
 
 ################ Gantt Chart ###################
-import plotly.figure_factory as ff
 """time_series_df = pd.DataFrame({"Precipitação (mm)": time_series.values}, index=False)
 time_series_df["Tempo"] = time_series.index
 time_series_df["Year"] = time_series.index.year
@@ -189,5 +194,23 @@ time_series_df["Weekday Name"] = time_series.index.weekday_name"""
 #Criar coluna de precipitação contendo a soma da precipiação do mês do referido ano em start até o ano em finish
 #Passar o dataframe na função create_gantt e assim plotar o diagrama de gantt
 
-#fig = ff.create_gantt(time_series, colors=['#333F44', '#93e4c1'], show_colorbar = True, bar_width = 0.2, showgrid_x = True, showgrid_y = True)
-#fig.show()
+gantt_chart = pd.read_csv("Introducao_a_Ciencia_de_Dados/Gantt Chart.csv", sep =';')
+gantt_chart['Start'] = pd.to_datetime(gantt_chart['Start'], dayfirst=True)
+gantt_chart['Finish'] = pd.to_datetime(gantt_chart['Finish'], dayfirst=True)
+
+colors = {'Not Started': 'rgb(220, 0, 0)',
+          'Incomplete': (1, 0.9, 0.16),
+          'Complete': 'rgb(0, 255, 100)'}
+
+fig = ff.create_gantt(gantt_chart, colors= colors, index_col='Resource', show_colorbar=True, group_tasks=True)
+
+plot(fig)
+
+'''    Available renderers:
+        ['pdf', 'plotly_mimetype', 'json', 'colab', 'jupyterlab',
+         'svg', 'vscode', 'iframe', 'nteract', 'chrome', 'databricks',
+         'iframe_connected', 'azure', 'cocalc', 'notebook', 'png',
+         'sphinx_gallery', 'jpg', 'jpeg', 'firefox', 'chromium',
+         'browser', 'kaggle', 'notebook_connected']'''
+
+#dataset = pd.read_csv('Introducao_a_Ciencia_de_Dados/chuvas_C_00937023.csv', skiprows=12, sep = ';', index_col=False).set_index('Data', drop=True)
