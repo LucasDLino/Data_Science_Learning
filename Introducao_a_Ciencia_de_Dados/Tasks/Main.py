@@ -1,7 +1,7 @@
-from Introducao_a_Ciencia_de_Dados.Tasks import Simulation
+from Introducao_a_Ciencia_de_Dados.Tasks.Simulation import Simulation
 
 def main():
-    sim = Simulation.Simulation()
+    sim = Simulation("chuvas_C_00937023.csv")
 
     sim.start()
 

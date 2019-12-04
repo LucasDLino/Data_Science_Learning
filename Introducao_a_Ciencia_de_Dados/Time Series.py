@@ -32,7 +32,7 @@ dataset = dataset.sort_index(ascending=True)
 dataset = dataset.apply(lambda x: pd.to_numeric(x.astype(str).str.replace(',','.'), errors='coerce'))
 
 time_series = pd.Series(index=dataset.index)
-time_series.rename('Precipitação (mm)')
+time_series = (time_series.rename('Precipitação (mm)'))
 
 
 for index,values in time_series.iteritems():
@@ -194,7 +194,9 @@ time_series_df["Weekday Name"] = time_series.index.weekday_name"""
 #Criar coluna de precipitação contendo a soma da precipiação do mês do referido ano em start até o ano em finish
 #Passar o dataframe na função create_gantt e assim plotar o diagrama de gantt
 
-gantt_chart = pd.read_csv("Introducao_a_Ciencia_de_Dados/Gantt Chart.csv", sep =';')
+path_gantt = Path(r"C:\Users\lucas\PycharmProjects\Data_Science_Learning\Introducao_a_Ciencia_de_Dados")
+
+gantt_chart = pd.read_csv(path_gantt.joinpath("Gantt Chart.csv"), sep =';')
 gantt_chart['Start'] = pd.to_datetime(gantt_chart['Start'], dayfirst=True)
 gantt_chart['Finish'] = pd.to_datetime(gantt_chart['Finish'], dayfirst=True)
 
