@@ -1,0 +1,6 @@
+
+
+#STATIONS
+2
+chuvas_C_00935056.zip
+chuvas_C_00935014.zip
