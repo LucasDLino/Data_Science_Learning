@@ -148,17 +148,20 @@ class Output(object):
         plt.pause(0.50)
 
 
-    def print_gantt_chart(self):
+    def print_gc(self, stations):
+        #This function is responsible for printing the Gantt Chart and Iterative plot using its data.
         from Introducao_a_Ciencia_de_Dados.Tasks.Gantt import Gantt
 
-        gantt = Gantt("stations.txt")
-
-        gantt.time_series = self.time_series
-        gantt.read_file()
-        gantt.load_stations()
+        ### OLHAR
+        #gantt = Gantt("stations.txt")
+        gantt = Gantt(stations)
+        #gantt.time_series = self.time_series
+        #gantt.read_file()
+        #gantt.load_stations()
         gantt.process_df()
 
         gantt.print_chart()
+
 
 
     def print_iterative(self):

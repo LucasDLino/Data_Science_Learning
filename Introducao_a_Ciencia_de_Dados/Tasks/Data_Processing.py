@@ -5,6 +5,7 @@ class Data_Processing(object):
     def __init__(self):
         self.dataset = pd.DataFrame()
         self.time_series = pd.Series()
+        self.stations = []  ### OLHAR
 
     def processing(self):
         self.dataset.index = pd.to_datetime(self.dataset.index, dayfirst=True)
@@ -32,3 +33,11 @@ class Data_Processing(object):
                     day += pd.Timedelta('1d')
                     if day.is_month_start:
                         break
+
+    ### OLHAR
+    def process_all(self):
+        for i in range(0, len(self.stations)):
+            self.dataset = self.stations[i]
+            self.processing()
+            self.time_series.name = self.stations[i].name  ### OLHAR
+            self.stations[i] = self.time_series

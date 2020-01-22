@@ -1,6 +1,11 @@
 
 
 #STATIONS
-2
+3
+chuvas_C_00937023.csv
 chuvas_C_00935056.zip
 chuvas_C_00935014.zip
+
+00937023 -> Piranhas
+00935056 -> Fazenda Boa Fortuna
+00935014 -> Pilar (Manguaba)
