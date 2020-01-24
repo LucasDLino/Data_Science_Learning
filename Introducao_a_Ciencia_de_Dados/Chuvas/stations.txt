@@ -1,11 +1,15 @@
 
 
 #STATIONS
-3
+5
 chuvas_C_00937023.csv
 chuvas_C_00935056.zip
 chuvas_C_00935014.zip
+chuvas_C_00937013.zip
+chuvas_C_00936010.zip
 
+00936010 -> Atalaia
+00937013 -> Deumiro Goulveia
 00937023 -> Piranhas
 00935056 -> Fazenda Boa Fortuna
 00935014 -> Pilar (Manguaba)

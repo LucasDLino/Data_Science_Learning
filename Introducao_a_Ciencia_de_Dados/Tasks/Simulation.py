@@ -32,7 +32,7 @@ class Simulation(object):
 
 
     def plot_all(self):
-        #self.out.print_years()
+        self.out.print_years()
         #self.out.print_months()
         #self.out.print_seasonality()
         #self.out.print_down_weekly()
@@ -40,12 +40,12 @@ class Simulation(object):
         #self.out.print_down_yearly()
         #self.out.print_down_rolling_7d()
         #self.out.print_down_rolling_365d()
-        self.out.print_gc(self.process.stations)
+        #self.out.print_gc(self.process.stations)
         #self.out.print_iterative()
 
-    def new_data(self, file_name):
+    '''def new_data(self, file_name):
         self.input.file_name = self.path.joinpath(file_name)
-        self.input.import_data()
+        self.input.import_data()'''
 
 
     #self.out.time_series = self.stations[0]

@@ -21,9 +21,12 @@ class Output(object):
         for ax in axes:
             ax.set_ylabel('Precipitação (mm)')
 
-        axes[0].plot(self.time_series, linewidth=0.4, color='orange')
-        axes[1].plot(self.time_series['1977':'2017'], linewidth=0.4, color='green')
-        axes[2].plot(self.time_series['2017'], linewidth=1.2, color='purple')
+        try:
+            axes[0].plot(self.time_series, linewidth=0.4, color='orange')
+            axes[1].plot(self.time_series['1977':'2017'], linewidth=0.4, color='green')
+            axes[2].plot(self.time_series['2017'], linewidth=1.2, color='purple')
+        except KeyError as e:
+            print('I got a KeyError - reason "%s"' % str(e))
 
         axes[2].xaxis.set_major_locator(mdates.MonthLocator(bymonthday=1))
         axes[2].xaxis.set_major_formatter(mdates.DateFormatter('%b %d'))
