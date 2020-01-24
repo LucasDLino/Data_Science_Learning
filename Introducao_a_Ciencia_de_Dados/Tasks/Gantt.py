@@ -1,4 +1,3 @@
-#from Introducao_a_Ciencia_de_Dados.Tasks.Simulation import Simulation
 import pandas as pd
 import plotly.graph_objects as go
 import plotly.figure_factory as ff
@@ -8,42 +7,14 @@ from random import randrange
 
 from pathlib import Path
 
-### OLHAR
 class Gantt(object):
 
     path = Path(r"C:\Users\lucas\PycharmProjects\Data_Science_Learning\Introducao_a_Ciencia_de_Dados\Chuvas")
 
     def __init__(self, stations):
-
-        #self.time_series = pd.Series()
         self.stations = stations
-
-        #self.file_name = self.path.joinpath(file_name)
-
-        #self.all_names = []
-
         self.gantt_df = pd.DataFrame()
 
-    '''def read_file(self):
-        file = open(str(self.file_name), 'r').read().splitlines()
-
-        position = file.index('#STATIONS')
-
-        n = int(file[position+1])
-
-        for i in range(position+2,position+2+n):
-            self.all_names.append(str(file[i]))
-
-
-    def load_stations(self):
-        self.stations.append(self.time_series)
-
-        for i in range(0, len(self.all_names)):
-            sim = Simulation(self.all_names[i])
-            sim.start()
-            sim.running()
-            self.stations.append(sim.out.time_series)
-    '''
 
     def process_df(self):
         for i in range(0, len(self.stations)):

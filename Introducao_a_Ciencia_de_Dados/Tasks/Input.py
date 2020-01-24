@@ -8,15 +8,13 @@ class Input(object):
     def __init__(self,file_name):
         self.file_name = file_name
         self.dataset = pd.DataFrame()
-
-        ### OLHAR
         self.all_names = []
         self.stations = []
 
     def import_data(self):
         self.dataset = pd.read_csv(self.file_name, skiprows=12, sep = ';', index_col=False).set_index('Data', drop=True)
 
-    ### OLHAR
+
     def read_file(self):
         file = open(str(self.file_name), 'r').read().splitlines()
 
