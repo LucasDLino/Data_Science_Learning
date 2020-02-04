@@ -20,7 +20,7 @@ import plotly.graph_objects as go
 
 API_URL = "https://www.alphavantage.co/query"
 
-print("Exemplos de ações:\nPERT3.SA -> Petroleo Brasileiro S.A. - Petrobras"
+print("Exemplos de ações:\nPETR3.SA -> Petroleo Brasileiro S.A. - Petrobras"
       "\nTEND3.SA -> Construtora Tenda S.A."
       "\nLREN3.SA -> Lojas Renner S.A."
       "\nEQTL3.SA -> Equatorial Energia S.A."
@@ -46,7 +46,7 @@ while list(response_json.keys())[0] == "Error Message":
 ### Tratamento do DataFrame dos preços
 data = pd.DataFrame.from_dict(response_json['Time Series (Daily)'], orient= 'index').sort_index(axis=1)
 data = data.rename(columns={ '1. open': 'Open', '2. high': 'High', '3. low': 'Low', '4. close': 'Close', '5. volume': 'Volume'})
-data = data[[ 'Open', 'High', 'Low', 'Close', 'Volume']] ## Os preços finais já foram ajustados
+#data = data[[ 'Open', 'High', 'Low', 'Close', 'Volume']] ## Os preços finais já foram ajustados
 data.index = pd.to_datetime(data.index)
 data = data.sort_index(ascending=True)
 data = data.apply(lambda x: pd.to_numeric(x.astype(str).str.replace(',', '.'), errors='coerce'))
@@ -79,7 +79,7 @@ plt.subplots()
 data["Month"] = data.index.month
 #data["Weekday Name"] = data.index.weekday_name
 sns.boxplot(data=data['2017'], x="Month", y=data["Close"])
-plt.title(symbol)
+plt.title(symbol + ' - 2017 Year')
 
 
 #### Ploting Iterative chart
