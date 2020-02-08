@@ -1,7 +1,7 @@
 from netCDF4 import Dataset, num2date
 from pathlib import Path
 import pandas as pd
-import datetime as dt
+#import datetime as dt
 import numpy as np
 from mpl_toolkits.basemap import Basemap, addcyclic, shiftgrid
 import matplotlib.pyplot as plt
@@ -15,7 +15,14 @@ netCDF4 deve ser instalado utilizando pip install
 
 Deve-se especificar a variável de ambiente PROJ_LIB
 
-Basemap foi baixado (.whl) e depois instalado via linha de comando
+Basemap foi baixado vs1.2.1 (.whl) e depois instalado via linha de comando
+
+Tinha 2 versões de numpy ao mesmo tempo: desinstalei tudo (matplotlib; numpy; pandas -> conda uninstall e pip uninstall várias vezes)
+e instalei tudo novamente utilizando conda install. Por fim instalei pyproj com o conda
+
+Depois desses passos finalmente voltou a funcionar
+
+
 '''
 
 nasa_path = Path(r"C:\Users\lucas\PycharmProjects\Files")
@@ -26,7 +33,7 @@ nc = Dataset(nasa_path.joinpath("MERRA2_400.tavg1_2d_slv_Nx.20190801.nc4"), mode
 for i in nc.variables:
     print (i, nc.variables[i].shape)
 
-variable = "T250"
+variable = "T2M"
 
 #Extracting data from netCDF file
 lats = nc.variables['lat'][:]
