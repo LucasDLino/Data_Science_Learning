@@ -9,7 +9,7 @@ from pathlib import Path
 
 class Gantt(object):
 
-    path = Path(r"C:\Users\lucas\PycharmProjects\Data_Science_Learning\Introducao_a_Ciencia_de_Dados\Chuvas")
+    path = Path(r"C:\Users\lucas\PycharmProjects\Data_Science_Learning\Introd_a_Ciencia_de_Dados\Chuvas")
 
     def __init__(self, stations):
         self.stations = stations

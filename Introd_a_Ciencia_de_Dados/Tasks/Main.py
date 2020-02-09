@@ -20,6 +20,8 @@ def main():
         else:
             if answer.lower() == "n":
                 print("Programa finalizado")
+                print("Inserindo no banco de dados ...")
+                sim.sql_run()
                 break
             else:
                 print("Opção inválida ... encerrando o programa")

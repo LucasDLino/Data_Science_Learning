@@ -3,7 +3,7 @@ from pathlib import Path
 
 class Simulation(object):
 
-    path = Path(r"C:\Users\lucas\PycharmProjects\Data_Science_Learning\Introducao_a_Ciencia_de_Dados\Chuvas")
+    path = Path(r"C:\Users\lucas\PycharmProjects\Data_Science_Learning\Introd_a_Ciencia_de_Dados\Chuvas")
 
     def __init__(self, file_name):
         self.input = Input.Input(self.path.joinpath(file_name))
@@ -20,8 +20,10 @@ class Simulation(object):
 
     def running(self):
         self.out.time_series = self.process.stations[self.count_stations]
-        #self.plot_all()
-        self.sql_run()
+        self.plot_all()
+        # for index,values in self.process.stations[0].items():
+        #     print(index," /type: ",type(index))
+        #     print(values," /type: ",type(values))
 
 
     def plot_all(self):
