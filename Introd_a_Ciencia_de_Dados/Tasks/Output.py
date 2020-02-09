@@ -207,7 +207,7 @@ class Output(object):
 
     def print_gc(self, stations):
         #This function is responsible for printing the Gantt Chart and Iterative plot using its data.
-        from Introducao_a_Ciencia_de_Dados.Tasks.Gantt import Gantt
+        from Introd_a_Ciencia_de_Dados.Tasks.Gantt import Gantt
 
         gantt = Gantt(stations)
 

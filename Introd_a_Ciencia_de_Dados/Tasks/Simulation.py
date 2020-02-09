@@ -1,4 +1,4 @@
-from Introducao_a_Ciencia_de_Dados.Tasks import Output, Data_Processing, Input, SQL_Task
+from Introd_a_Ciencia_de_Dados.Tasks import Output, Data_Processing, Input, SQL_Task
 from pathlib import Path
 
 class Simulation(object):

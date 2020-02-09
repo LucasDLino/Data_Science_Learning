@@ -1,4 +1,4 @@
-from Introducao_a_Ciencia_de_Dados.Tasks.Simulation import Simulation
+from Introd_a_Ciencia_de_Dados.Tasks.Simulation import Simulation
 
 def main():
     sim = Simulation("stations.txt") # Lista de Estações

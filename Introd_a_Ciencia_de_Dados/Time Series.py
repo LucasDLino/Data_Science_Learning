@@ -215,4 +215,4 @@ plot(fig)
          'sphinx_gallery', 'jpg', 'jpeg', 'firefox', 'chromium',
          'browser', 'kaggle', 'notebook_connected']'''
 
-#dataset = pd.read_csv('Introducao_a_Ciencia_de_Dados/chuvas_C_00937023.csv', skiprows=12, sep = ';', index_col=False).set_index('Data', drop=True)
+#dataset = pd.read_csv('Introd_a_Ciencia_de_Dados/chuvas_C_00937023.csv', skiprows=12, sep = ';', index_col=False).set_index('Data', drop=True)
