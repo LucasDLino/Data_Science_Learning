@@ -18,6 +18,11 @@ def main():
             else:
                 pass
         else:
-            break
+            if answer.lower() == "n":
+                print("Programa finalizado")
+                break
+            else:
+                print("Opção inválida ... encerrando o programa")
+                break
 
 main()

@@ -20,7 +20,10 @@ Basemap foi baixado vs1.2.1 (.whl) e depois instalado via linha de comando
 Tinha 2 versões de numpy ao mesmo tempo: desinstalei tudo (matplotlib; numpy; pandas -> conda uninstall e pip uninstall várias vezes)
 e instalei tudo novamente utilizando conda install. Por fim instalei pyproj com o conda
 
-Depois desses passos finalmente voltou a funcionar
+Depois desses passos finalmente voltou a funcionar. Mas deu erro novamente.
+
+Por fim, instalei com o conda e desinstalei novamente do conda/pip/pip3. 
+Limpei o cache do anaconda. INSTALEI CADA COMPONENTE UTILIZANDO O PIP e voltou a funcionar
 
 
 '''
